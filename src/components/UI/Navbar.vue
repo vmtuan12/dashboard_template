@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from 'vue';
-import Tooltip from './Tooltip.vue';
 import NavbarButton from './NavbarComponent/NavbarButton.vue';
 
 const emit = defineEmits(['handleBarSize']);

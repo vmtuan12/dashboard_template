@@ -1,9 +1,11 @@
 <script setup>
 import { computed, onBeforeMount, onMounted, onUnmounted, ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
 import Navbar from '../components/UI/Navbar.vue';
 import ProfileDropdown from '../components/UI/ProfileDropdown.vue'
 
 const smallBar = ref(false)
+const route = useRoute()
 
 const main = ref()
 const scrollPosition = ref(0)
@@ -23,6 +25,10 @@ onBeforeMount(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
 });
+
+watch(() => route.fullPath, () => {
+    main.value.scrollTop = 0
+});
 </script>
 
 <template>
@@ -30,6 +36,7 @@ onUnmounted(() => {
         <Navbar @handle-bar-size="smallBar = !smallBar" :smallbar="smallBar" />
         <div 
             ref="main"
+            id="main"
             class="sticky top-0 z-0 min-h-screen transition-all duration-500 ease-in-out  sm:px-4 pb-4 overflow-x-hidden max-h-screen"
             :class="smallBar ? 'px-2 sm:px-8 w-[calc(100%-64px)]' : 'w-0 sm:px-8 sm:w-[calc(100%-300px)]'"
             @scroll="handleScroll"
@@ -58,5 +65,9 @@ onUnmounted(() => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+#main {
+    scroll-behavior: smooth;
 }
 </style>
