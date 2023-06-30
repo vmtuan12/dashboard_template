@@ -45,7 +45,7 @@ watch(() => route.fullPath, () => {
                 class="sticky z-0 w-full top-0 flex items-center justify-between py-3 rounded-b-3xl transition-all duration-500 ease-in-out"
                 :class="scrollPosition > 0 ? 'bg-[#52a1f5] text-white px-5' : 'text-[#52a1f5]'"
             >
-                <p class="text-lg font-semibold">Dashboard</p>
+                <p class="text-xl font-bold">Dashboard</p>
                 <ProfileDropdown />
             </div>
             <router-view v-slot="{ Component }">

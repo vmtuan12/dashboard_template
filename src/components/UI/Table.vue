@@ -43,7 +43,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="flex flex-col space-y-4 align-middle w-full p-4">
+    <div class="flex flex-col space-y-4 align-middle w-full">
         <div class="flex items-center justify-between">
             <p class="text-xl font-bold text-[#52a1f5]">{{ name }}</p>
             
@@ -62,7 +62,7 @@ onUnmounted(() => {
                     <th v-for="item in header" :key="item.key" :class="`${item.align} ${item.colWidth}`">
                         {{ item.content }}
                     </th>
-                    <th>
+                    <th class="w-fit text-center">
                         <slot name="action-header"></slot>
                     </th>
                 </thead>
@@ -71,7 +71,7 @@ onUnmounted(() => {
                         <td v-for="col in header" :key="col.key" :class="`${col.align} ${rowMinHeight}`">
                             {{ row[col.key] }}
                         </td>
-                        <td>
+                        <td class="flex items-center justify-center">
                             <slot name="action"></slot>
                         </td>
                     </tr>
