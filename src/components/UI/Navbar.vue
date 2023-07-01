@@ -9,7 +9,7 @@ const props = defineProps(['smallbar']);
     <div 
         id="sidebar" 
         class="max-h-screen sticky top-0 bg-[#52a1f5] border-l-8 border-solid border-[#52a1f5] transition-all duration-500 overflow-hidden" 
-        :class="smallbar ? 'w-16' : 'w-[300px] max-sm:w-full'"
+        :class="smallbar ? 'w-16' : 'w-60 max-sm:w-full'"
     >
         <div class="w-full flex justify-end p-4">
             <svg 

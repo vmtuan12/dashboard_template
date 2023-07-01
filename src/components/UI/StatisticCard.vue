@@ -15,18 +15,16 @@ const colorArray = ref({
 </script>
 
 <template>
-    <div class="bg-white w-full grid grid-cols-2 grid-rows-[repeat(x,max-content),1fr] py-7 px-8 max-md:px-6">
-        <div class="flex flex-col w-full">
-            <p 
-                class="font-semibold text-4xl"
-                :class="colorArray[color] !== undefined ? colorArray[color] : colorArray['primary']"
-            >
-                {{ statistic }}
-            </p>
-            <p class="text-gray-600 font-medium">{{ category }}</p>
+    <div class="bg-white w-full py-7 px-8 max-md:px-6">
+        <div class="w-full flex items-center mb-2">
+            <slot></slot>
         </div>
-        <div class="w-full flex items-center justify-end">
-            <slot name="icon"></slot>
-        </div>
+        <p 
+            class="font-semibold text-4xl"
+            :class="colorArray[color] !== undefined ? colorArray[color] : colorArray['primary']"
+        >
+            {{ statistic }}
+        </p>
+        <p class="text-gray-600 font-medium">{{ category }}</p>
     </div>
 </template>
