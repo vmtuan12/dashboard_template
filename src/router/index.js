@@ -37,6 +37,11 @@ const router = createRouter({
           name: 'Work',
           component: () => import('@/pages/Work.vue'),
         },
+        {
+          path: 'profile',
+          name: 'UserProfile',
+          component: () => import('@/pages/PersonalUserProfile.vue'),
+        },
       ]
     },
     {
