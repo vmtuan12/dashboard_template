@@ -18,7 +18,7 @@ const signIn = () => {
 </script>
 
 <template>
-    <div class="w-4/5 max-[400px]:w-full relative flex items-end max-md:flex-col max-md:justify-end shadow-lg md:h-[70vh] md:max-h-[30rem] max-md:h-fit md:min-w-[650px] md:max-w-4xl rounded-3xl overflow-hidden bg-gradient-to-r from-[#52a1f5] to-[#39c0c8]">
+    <div class="w-4/5 max-[480px]:w-full relative flex items-end max-md:flex-col max-md:justify-end shadow-lg md:h-[70vh] md:max-h-[30rem] max-md:h-fit md:min-w-[650px] md:max-w-4xl rounded-3xl overflow-hidden bg-gradient-to-r from-[#52a1f5] to-[#39c0c8]">
         <div class="md:hidden py-4 w-full bg-gradient-to-r from-[#52a1f5] to-[#39c0c8] flex items-center justify-center text-2xl font-bold text-white">
             Welcome back
         </div>
@@ -42,10 +42,10 @@ const signIn = () => {
                 @click.prevent="signIn"
                 class="relative shadow-md max-md:w-full max-md:rounded-lg text-lg group font-semibold text-white flex justify-center items-center bg-[#52a1f5] overflow-hidden px-10 py-3 rounded-full transition-all duration-300 ease-in-out hover:bg-[#3d96f5] active:bg-[#2d8ef7]"
             >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-6 h-6 ml-1 absolute transition-transform duration-300 ease-in-out -translate-x-20 group-hover:-translate-x-0 max-md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="w-6 h-6 ml-1 absolute transition-transform duration-300 ease-in-out -translate-x-24 group-hover:-translate-x-0 max-md:hidden">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                 </svg>
-                <p class="transition-transform duration-300 ease-in-out md:group-hover:translate-x-20">Login</p>
+                <p class="transition-transform duration-300 ease-in-out md:group-hover:translate-x-24">Login</p>
             </button>
             <p class="md:hidden">
                 New user?

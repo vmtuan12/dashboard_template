@@ -17,7 +17,7 @@ const signIn = () => {
 </script>
 
 <template>
-    <div class="rounded-3xl w-4/5 max-[400px]:w-full shadow-md flex max-md:flex-col max-w-5xl overflow-hidden relative max-md:bg-gradient-to-tr max-md:from-[#52a1f5] max-md:to-[#39c0c8]">
+    <div class="rounded-3xl w-4/5 max-[480px]:w-full shadow-md flex max-md:flex-col max-w-5xl overflow-hidden relative max-md:bg-gradient-to-tr max-md:from-[#52a1f5] max-md:to-[#39c0c8]">
         <div class="text-center max-md:hidden space-y-3 bg-gradient-to-tr from-[#52a1f5] to-[#39c0c8] text-white py-12 px-10 w-2/5 flex flex-col items-center justify-center">
             <p class="font-bold text-3xl">Welcome to MTHP</p>
             <p class="font-light">Fill in your information and have an amazing ride with us</p>
@@ -30,7 +30,7 @@ const signIn = () => {
         <div class="py-4 text-center text-white font-bold text-2xl md:hidden">
             Welcome
         </div>
-        <form class="px-20 rounded-tr-[3rem] max-md:px-16 max-sm:px-10 max-[400px]:px-4 py-12 max-md:py-6 space-y-4 bg-white w-3/5 max-md:w-full flex flex-col items-center">
+        <form class="px-20 rounded-tr-[3rem] max-md:px-16 max-sm:px-10 max-[480px]:px-4 py-12 max-md:py-6 space-y-4 bg-white w-3/5 max-md:w-full flex flex-col items-center">
             <p class="text-3xl max-md:text-2xl text-[#39c0c8] font-bold text-center">Register</p>
             <div class="w-full">
                 <p class="font-bold text-[#1d1d1d] text-sm">Username</p>
