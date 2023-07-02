@@ -12,6 +12,7 @@ const props = defineProps([
     'underlineWeight',
     'noBorder',
     'error',
+    'autocomplete'
 ]);
 const emit = defineEmits(['update:modelValue']);
 
@@ -82,6 +83,7 @@ const defaultIconColor = computed(() => {
             <slot></slot>
         </div>
         <input
+            :autocomplete="autocomplete"
             :value="modelValue"
             @input="$emit('update:modelValue', $event.target.value)"
             :placeholder="placeholder" 
