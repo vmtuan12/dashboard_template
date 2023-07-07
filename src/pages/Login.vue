@@ -15,6 +15,14 @@ const signIn = () => {
     router.push('/')
 };
 
+const validEmail = () => {
+    if (email.value !== null && email.value !== '') {
+        
+    } else {
+        wrongEmail.value = true
+    }
+};
+
 </script>
 
 <template>
@@ -26,13 +34,13 @@ const signIn = () => {
             <p class="text-3xl max-md:text-2xl text-[#52a1f5] font-bold text-center">Sign in to Dashboard</p>
             <div class="w-full">
                 <p class="font-bold text-[#1d1d1d] text-sm">Email</p>
-                <IconInput :error="wrongEmail" border-color="blue" type="text" placeholder="Enter your email..." class="w-full mb-6">
+                <IconInput v-model="email" :error="wrongEmail" border-color="blue" type="text" placeholder="Enter your email..." class="w-full mb-6">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                     </svg>
                 </IconInput>
                 <p class="font-bold text-[#1d1d1d] text-sm">Password</p>
-                <IconInput border-color="blue" autocomplete="on" type="password" placeholder="Enter your password..." class="w-full mb-4">
+                <IconInput v-model="password" border-color="blue" autocomplete="on" type="password" placeholder="Enter your password..." class="w-full mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                     </svg>

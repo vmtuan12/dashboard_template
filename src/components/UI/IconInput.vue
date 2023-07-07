@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 
 const props = defineProps([
     'placeholder', 
@@ -14,7 +14,7 @@ const props = defineProps([
     'error',
     'autocomplete'
 ]);
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue', 'focusout']);
 
 const round = {
     sm: 'rounded',
@@ -72,12 +72,18 @@ const defaultIconColor = computed(() => {
     }
 });
 
+const main = ref();
+onMounted(() => {
+    console.log(main.value.children[1]);
+});
+
 </script>
 
 <template>
     <div 
         class="flex items-center px-3 py-2 space-x-2 border-solid font-medium"
         :class="borderStyle"
+        ref="main"
     >
         <div class="border-r border-solid border-gray-400 pr-1.5" :class="defaultIconColor">
             <slot></slot>
@@ -88,6 +94,7 @@ const defaultIconColor = computed(() => {
             @input="$emit('update:modelValue', $event.target.value)"
             :placeholder="placeholder" 
             :type="type"
+            @focusout="$emit('focusout')"
             class="placeholder:text-gray-500 w-full"
         />
     </div>
@@ -100,5 +107,12 @@ const defaultIconColor = computed(() => {
 
     input[type=file]::file-selector-button {
         display: none;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active{
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
     }
 </style>
